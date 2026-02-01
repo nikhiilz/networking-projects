@@ -1,6 +1,6 @@
 # Office VLAN Network
 
-![Network Diagram](/screenshots/network_diagram.png)  
+![Network Diagram](screenshots/network_diagram.png)  
 <p align="center">
   <strong>Network Representation</strong>
 </p>
@@ -19,9 +19,9 @@ It is subnetted into /26 networks to support each department separately
 | Customer Service  | 30      |
 
 \
-Packet Tracer File: [`/packet-tracer/office-vlan-network.pkt`](/packet-tracer/office-vlan-network.pkt)
+Packet Tracer File: [`/packet-tracer/office-vlan-network.pkt`](packet-tracer/office-vlan-network.pkt)
 \
-Documentation File: [`/documentation/Office_VLAN_Network–Technical_Documentation.pdf`](/documentation/Office_VLAN_Network–Technical_Documentation.pdf)
+Documentation File: [`documentation/Office_VLAN_Network–Technical_Documentation.pdf`](/documentation/Office_VLAN_Network–Technical_Documentation.pdf)
 
 ---
 
