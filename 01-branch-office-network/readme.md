@@ -21,7 +21,7 @@ It is subnetted into /26 networks to support each department separately
 \
 Packet Tracer File: [`/packet-tracer/office-vlan-network.pkt`](packet-tracer/office-vlan-network.pkt)
 \
-Documentation File: [`documentation/Office_VLAN_Network–Technical_Documentation.pdf`](/documentation/Office_VLAN_Network–Technical_Documentation.pdf)
+Documentation File: [`documentation/Office_VLAN_Network–Technical_Documentation.pdf`](documentation/Office_VLAN_Network–Technical_Documentation.pdf)
 
 ---
 
