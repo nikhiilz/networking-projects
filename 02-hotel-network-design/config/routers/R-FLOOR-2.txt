@@ -1,0 +1,139 @@
+!Device = R-FLOOR-2
+
+Current configuration : 2054 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R-FLOOR-2
+!
+!
+!
+!
+!
+ip dhcp pool APFloor2
+ network 192.168.20.0 255.255.255.0
+ default-router 192.168.20.1
+ dns-server 192.168.20.1
+ domain-name APFloor2.com
+ip dhcp pool FinancePool
+ network 192.168.5.0 255.255.255.0
+ default-router 192.168.5.1
+ dns-server 192.168.5.1
+ domain-name Finance.com
+ip dhcp pool HRPool
+ network 192.168.4.0 255.255.255.0
+ default-router 192.168.4.1
+ dns-server 192.168.4.1
+ domain-name HR.com
+ip dhcp pool SalesPool
+ network 192.168.3.0 255.255.255.0
+ default-router 192.168.3.1
+ dns-server 192.168.3.1
+ domain-name Sales.com
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username rwfloor2 password 0 rwfloor2
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017BZAP-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name rfloor2
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.20.1 255.255.255.0
+!
+interface FastEthernet0/0.30
+ encapsulation dot1Q 30
+ ip address 192.168.3.1 255.255.255.0
+!
+interface FastEthernet0/0.40
+ encapsulation dot1Q 40
+ ip address 192.168.4.1 255.255.255.0
+!
+interface FastEthernet0/0.50
+ encapsulation dot1Q 50
+ ip address 192.168.5.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 10.10.10.2 255.255.255.252
+!
+interface Serial0/3/1
+ ip address 10.10.10.5 255.255.255.252
+ clock rate 64000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 10.10.10.0 0.0.0.3 area 0
+ network 10.10.10.4 0.0.0.3 area 0
+ network 192.168.20.0 0.0.0.255 area 0
+ network 192.168.5.0 0.0.0.255 area 0
+ network 192.168.4.0 0.0.0.255 area 0
+ network 192.168.3.0 0.0.0.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end

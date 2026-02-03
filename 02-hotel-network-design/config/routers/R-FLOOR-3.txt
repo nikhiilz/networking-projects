@@ -1,0 +1,119 @@
+!Device = R-FLOOR-3
+
+Current configuration : 1516 bytes
+!
+version 15.1
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname R-FLOOR-3
+!
+!
+!
+!
+!
+ip dhcp pool AdminPool
+ network 192.168.2.0 255.255.255.0
+ default-router 192.168.2.1
+ dns-server 192.168.2.1
+ domain-name Admin.com
+ip dhcp pool ITPool
+ network 192.168.1.0 255.255.255.0
+ default-router 192.168.1.1
+ dns-server 192.168.1.1
+ domain-name IT.com
+!
+!
+!
+no ip cef
+no ipv6 cef
+!
+!
+!
+username rwfloor3 password 0 rwfloor3
+!
+!
+license udi pid CISCO2811/K9 sn FTX1017S9E0-
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+ip domain-name rfloor3
+!
+!
+spanning-tree mode pvst
+!
+!
+!
+!
+!
+!
+interface FastEthernet0/0
+ no ip address
+ duplex auto
+ speed auto
+!
+interface FastEthernet0/0.10
+ encapsulation dot1Q 10
+ ip address 192.168.1.1 255.255.255.0
+!
+interface FastEthernet0/0.20
+ encapsulation dot1Q 20
+ ip address 192.168.2.1 255.255.255.0
+!
+interface FastEthernet0/1
+ no ip address
+ duplex auto
+ speed auto
+ shutdown
+!
+interface Serial0/3/0
+ ip address 10.10.10.6 255.255.255.252
+!
+interface Serial0/3/1
+ ip address 10.10.10.10 255.255.255.252
+ clock rate 64000
+!
+interface Vlan1
+ no ip address
+ shutdown
+!
+router ospf 1
+ log-adjacency-changes
+ network 10.10.10.4 0.0.0.3 area 0
+ network 10.10.10.8 0.0.0.3 area 0
+ network 192.168.2.0 0.0.0.255 area 0
+ network 192.168.1.0 0.0.0.255 area 0
+!
+ip classless
+!
+ip flow-export version 9
+!
+!
+!
+!
+!
+!
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+ login local
+ transport input ssh
+line vty 5 15
+ login local
+ transport input ssh
+!
+!
+!
+end
