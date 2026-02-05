@@ -77,6 +77,6 @@ The goal was to understand and implement industry-standard networking technologi
 
 - Packet Tracer File: [`/packet-tracer/hotel-network-design.pkt`](packet-tracer/hotel-network-design.pkt)
 
-- Network Documentation & Testing: [`/documentation`](documentation/)
+- Network Documentation & Testing: [`/documentation`](documentation/Hotel-Network-Design.pdf)
 
 - Device Configurations: [`/configs`](configs/)
