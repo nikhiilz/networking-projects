@@ -1,0 +1,26 @@
+Main Campus:
+
+no of buildings = 3
+no of departments = no of access layer switches = 8
+MLS =1
+router =1
+
+
+Remote Campus:
+
+no of building = 1
+no od access layer switches = 2
+MLS = 1
+router =1
+
+
+Cloud Network:
+
+no of routers = 1
+no of servers = 1
+
+
+
+cloud network = 20.20.20.0/30
+network for routers = 10.10.10.0/30
+clock rate between router serial links = 6400
